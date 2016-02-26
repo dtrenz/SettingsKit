@@ -12,33 +12,53 @@ public protocol SettingsKit: CustomStringConvertible {
 
 public extension SettingsKit {
   
+  typealias SettingChangeHandler = (newValue: AnyObject?) -> Void
+  
   var description: String {
     guard let value = Self.get(self) else { return "nil" }
     
     return "\(value)"
   }
   
-  func get() -> AnyObject? {
-    return Self.get(self)
-  }
+  private var defaults: NSUserDefaults { return NSUserDefaults.standardUserDefaults() }
   
-  func set<T>(value: T) {
-    Self.set(self, value)
-  }
+  // MARK: - Static Convenience Methods
   
   static func get(setting: Self) -> AnyObject? {
-    return NSUserDefaults.standardUserDefaults().objectForKey(setting.identifier)
+    return setting.get()
   }
   
   static func set<T>(setting: Self, _ value: T) {
-    let defaults = NSUserDefaults.standardUserDefaults()
-    
+    setting.set(value)
+  }
+  
+  static func subscribe(setting: Self, onChange: SettingChangeHandler) {
+    setting.subscribe(onChange)
+  }
+  
+  // MARK: - Instance Methods
+  
+  private func get() -> AnyObject? {
+    return defaults.objectForKey(identifier)
+  }
+  
+  private func set<T>(value: T) {
     if let boolVal = value as? Bool {
-      defaults.setBool(boolVal, forKey: setting.identifier)
+      defaults.setBool(boolVal, forKey: identifier)
     } else if let intVal = value as? Int {
-      defaults.setInteger(intVal, forKey: setting.identifier)
+      defaults.setInteger(intVal, forKey: identifier)
     } else if let objectVal = value as? AnyObject {
-      defaults.setObject(objectVal, forKey: setting.identifier)
+      defaults.setObject(objectVal, forKey: identifier)
+    }
+  }
+  
+  private func subscribe(onChange: SettingChangeHandler) {
+    let center = NSNotificationCenter.defaultCenter()
+    
+    center.addObserverForName(NSUserDefaultsDidChangeNotification, object: defaults, queue: nil) { (notif) -> Void in
+      if let defaults = notif.object as? NSUserDefaults {
+        onChange(newValue: defaults.objectForKey(self.identifier))
+      }
     }
   }
   

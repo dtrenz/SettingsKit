@@ -7,9 +7,9 @@ Released on 2016-02-26.
 
 #### Added
 - Core feature set for initial release:
-  - Creates version string using Major.Minor.Build
-  - Displays version string in Settings screen
-- Documentation & Screenshots
+  - Store & Retrieve settings
+  - Observe settings to be able to respond to changes
+- Documentation
 - Example iOS project
 
 ---
