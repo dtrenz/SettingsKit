@@ -20,11 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Settings.set(.AppVersion, "1.0.1")
     
     // set values/state for custom preference items
+    
+    // Method A
     Settings.set(.ApiEnvironment, "Staging")
+    Settings.set(.Contrast, 80)
     Settings.set(.EnableAnalytics, true)
     Settings.set(.FavoriteColor, "#00FF00")
-    Settings.set(.Contrast, 80)
     Settings.set(.FirstName, "Han")
+    
+    // Method B
+    Settings.ApiEnvironment.set("Staging")
+    Settings.Contrast.set(80)
+    Settings.EnableAnalytics.set(true)
+    Settings.FavoriteColor.set("#00FF00")
+    Settings.FirstName.set("Han")
     
     return true
   }

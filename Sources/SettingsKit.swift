@@ -18,6 +18,14 @@ public extension SettingsKit {
     return "\(value)"
   }
   
+  func get() -> AnyObject? {
+    return Self.get(self)
+  }
+  
+  func set<T>(value: T) {
+    Self.set(self, value)
+  }
+  
   static func get(setting: Self) -> AnyObject? {
     return NSUserDefaults.standardUserDefaults().objectForKey(setting.identifier)
   }
