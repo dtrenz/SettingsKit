@@ -1,9 +1,9 @@
 # SettingsKit
 
-[![CI Status](http://img.shields.io/travis/dtrenz/About.svg?style=flat)](https://travis-ci.org/dtrenz/About)
-[![Version](https://img.shields.io/cocoapods/v/About.svg?style=flat)](http://cocoapods.org/pods/About)
-[![License](https://img.shields.io/cocoapods/l/About.svg?style=flat)](http://cocoapods.org/pods/About)
-[![Platform](https://img.shields.io/cocoapods/p/About.svg?style=flat)](http://cocoapods.org/pods/About)
+[![CI Status](http://img.shields.io/travis/dtrenz/SettingsKit.svg?style=flat)](https://travis-ci.org/dtrenz/SettingsKit)
+[![Version](https://img.shields.io/cocoapods/v/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
+[![License](https://img.shields.io/cocoapods/l/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
+[![Platform](https://img.shields.io/cocoapods/p/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
 [![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 
 `SettingsKit` is a small library that makes it very simple to add useful app metadata
