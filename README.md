@@ -29,22 +29,23 @@ makes it easier to add settings to your app.
 
 ## Usage
 
-Any preference items in your `Settings.bundle` will be available in a `Settings`
-enum:
+### Fetch a setting
 
 ```swift
-// set values/state for custom preference items
-Settings.set(.AppVersion, "1.0.1")
+let name = Settings.get(.FirstName)
+```
+
+### Modify a setting
+
+```swift
 Settings.set(.ApiEnvironment, "Staging")
 Settings.set(.Contrast, 80)
 Settings.set(.EnableAnalytics, true)
-Settings.set(.FavoriteColor, "#00FF00")
-Settings.set(.FirstName, "Han")
+```
 
-// retrieve the current setting values
-let name = Settings.get(.FirstName)
-print("Hello, \(name).")
+### Observe a setting
 
+```swift
 // observe and respond to any changes made to a given setting
 Settings.subscribe(.FavoriteColor) { (newValue) -> Void in
   print("Favorite color was changed to \(newValue)")
