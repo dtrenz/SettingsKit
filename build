@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "optparse"
-require_relative '../lib/settingskit.rb'
+require_relative 'cli/settingskit.rb'
 
 
 options = {}
@@ -21,8 +21,8 @@ OptionParser.new do |opts|
     options[:project] = path
   end
 
-  opts.on("-s", "--settings PATH", "Settings.bundle directory") do |path|
-    options[:settings] = File.join(path, "Settings.bundle/Root.plist")
+  opts.on("-s", "--settings PATH", "Path to Settings.bundle/Root.plist") do |path|
+    options[:settings] = path
   end
 
   opts.on("-h", "--help", "Prints this help") do
