@@ -11,7 +11,6 @@
 		C5C8ED441C80C3BE001BC3F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C8ED431C80C3BE001BC3F7 /* Main.storyboard */; };
 		C5D7BDB01C80B9640061D9DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BDA61C80B9640061D9DD /* AppDelegate.swift */; };
 		C5D7BDB51C80B9640061D9DD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5D7BDAE1C80B9640061D9DD /* Settings.bundle */; };
-		C5D7BDB61C80B9640061D9DD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BDAF1C80B9640061D9DD /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 		C5D7BDA61C80B9640061D9DD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Source/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		C5D7BDAD1C80B9640061D9DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = SOURCE_ROOT; };
 		C5D7BDAE1C80B9640061D9DD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Source/Settings.bundle; sourceTree = SOURCE_ROOT; };
-		C5D7BDAF1C80B9640061D9DD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Source/Settings.swift; sourceTree = SOURCE_ROOT; };
 		C5D7BDCC1C80BE9F0061D9DD /* SettingsKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SettingsKit.xcodeproj; path = ../SettingsKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +73,6 @@
 			children = (
 				C5D7BDAE1C80B9640061D9DD /* Settings.bundle */,
 				C5D7BDA61C80B9640061D9DD /* AppDelegate.swift */,
-				C5D7BDAF1C80B9640061D9DD /* Settings.swift */,
 				C5C8ED451C80C3C3001BC3F7 /* Interface */,
 				C5D7BDB71C80B9990061D9DD /* Supporting Files */,
 			);
@@ -115,10 +112,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C56921D81C765DB200CC8F56 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				C5D7BD821C7F92700061D9DD /* SettingsKit */,
 				C56921C21C765DB200CC8F56 /* Sources */,
 				C56921C31C765DB200CC8F56 /* Frameworks */,
 				C56921C41C765DB200CC8F56 /* Resources */,
-				C5D7BD821C7F92700061D9DD /* SettingsKit */,
 			);
 			buildRules = (
 			);
@@ -205,15 +202,15 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Example/Example/Settings.swift",
+				"$(SRCROOT)/Source/Settings.bundle/Root.plist",
 			);
 			name = SettingsKit;
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/SettingsKit/configure",
+				"$(SRCROOT)/Source/Settings.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"SettingsKit: Configuring Settings.bundle\"\n#cat ~/Dev/src/About/Sources/About.swift $(SCRIPT_INPUT_FILE_0) ~/Dev/src/About/Sources/generate.swift | swiftc - -o $(DERIVED_FILE_DIR)/SettingsKit/configure && ./!!$";
+			shellScript = "echo \"SettingsKit\"\n${SRCROOT}/../cli/bin/build -s ${SCRIPT_INPUT_FILE_0} -p ${PROJECT_FILE_PATH} -o ${SCRIPT_OUTPUT_FILE_0}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -222,7 +219,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D7BDB61C80B9640061D9DD /* Settings.swift in Sources */,
 				C5D7BDB01C80B9640061D9DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

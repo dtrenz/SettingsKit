@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SettingsKit.xcscheme</key>
+		<key>SettingsKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>SettingsKitTests.xcscheme</key>
+		<key>SettingsKitTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -17,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C51AEF471C8241270060E1B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C5D7BD921C80B5FD0061D9DD</key>
 		<dict>
 			<key>primary</key>
