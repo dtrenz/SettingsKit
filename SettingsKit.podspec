@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.social_media_url = "https://twitter.com/dtrenz"
   s.platform         = :ios, "8.3"
   s.requires_arc     = true
-  s.source_files     = "Sources/**/*"
+  s.source_files     = [ "Sources/**/*", "cli/**/*", "build" ]
   s.preserve_paths   = [ "cli/**/*", "build" ]
 end
