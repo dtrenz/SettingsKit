@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require_relative 'cli/settingskit.rb'
+
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Run script build phase tool for rendering a Settings swift file for use with SettingsKit.\n"
+  opts.banner += "\n"
+  opts.banner += "Usage: build [options]"
+  opts.separator ""
+  opts.separator "Options:"
+
+  opts.on("-o", "--outfile PATH", "Output location for the generated Settings swift file, relative to the .xcodeproj") do |path|
+    options[:outfile] = path
+  end
+
+  opts.on("-p", "--project PATH", "Path to .xcodeproj") do |path|
+    options[:project] = path
+  end
+
+  opts.on("-s", "--settings PATH", "Path to Settings.bundle/Root.plist") do |path|
+    options[:settings] = path
+  end
+
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+def verify(options, option)
+  unless options[option]
+    puts "Missing required option: --#{option}"
+    exit
+  end
+end
+
+# check for required options
+verify(options, :outfile)
+verify(options, :project)
+verify(options, :settings)
+
+SettingsKit::Parser.parse(options[:settings])
+                   .render(options[:outfile])
+                   .integrate(options[:project])

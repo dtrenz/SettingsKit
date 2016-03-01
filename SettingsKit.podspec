@@ -10,11 +10,12 @@ Pod::Spec.new do |s|
                        observing preference items in your app's Settings bundle.
                        DESC
   s.homepage         = "https://github.com/dtrenz/SettingsKit"
-  s.license          = 'Apache 2.0'
+  s.license          = "Apache 2.0"
   s.author           = { "Dan Trenz" => "dtrenz@gmail.com" }
   s.source           = { :git => "https://github.com/dtrenz/SettingsKit.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/dtrenz'
-  s.platform         = :ios, '8.3'
+  s.social_media_url = "https://twitter.com/dtrenz"
+  s.platform         = :ios, "8.3"
   s.requires_arc     = true
-  s.source_files     = 'Sources/**/*'
+  s.source_files     = [ "Sources/**/*", "cli/**/*", "build" ]
+  s.preserve_paths   = [ "cli/**/*", "build" ]
 end
