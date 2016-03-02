@@ -6,11 +6,21 @@
 [![Platform](https://img.shields.io/cocoapods/p/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
 [![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 
-`SettingsKit` is a small library & build tool simplifies reading & writing items
-in the iOS Settings app. It also makes working with app settings a bit safer by
-using enums instead of magic strings that could accidentally be typo-ed.
+`SettingsKit` is a small library & build tool that makes it easier to work
+with app preferences in the iOS Settings app. It also makes working with
+settings a bit safer by using enums instead of "magic" strings, which are
+vulnerable to typos.
 
-![Settings Example](Docs/Screenshots/settings.png)
+
+## How does it work?
+`SettingsKit` comes bundled with a tool that generates an enum (`Settings.swift`)
+at build-time based on the preference items you have configured in your Settings.bundle.
+You can then use the `Settings` enum to easily access, update and observe individual
+settings.
+
+Here is a Settings screen w/ generated enum and sample implementation code:
+
+[![Settings Example](Docs/Screenshots/how-it-works.png)](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/settings.png)
 
 
 ## When would I want to use SettingKit?
