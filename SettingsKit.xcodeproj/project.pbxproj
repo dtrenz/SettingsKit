@@ -141,6 +141,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5D7BD9B1C80B5FD0061D9DD /* Build configuration list for PBXNativeTarget "SettingsKit" */;
 			buildPhases = (
+				C5AA99081C888BB1009577E7 /* Swiftlint */,
 				C5D7BD8E1C80B5FD0061D9DD /* Sources */,
 				C5D7BD8F1C80B5FD0061D9DD /* Frameworks */,
 				C5D7BD901C80B5FD0061D9DD /* Headers */,
@@ -242,6 +243,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C5AA99081C888BB1009577E7 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
