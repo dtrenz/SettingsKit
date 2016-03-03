@@ -1,0 +1,4 @@
+coverage_service: cobertura_xml
+xcodeproj: SettingsKit.xcodeproj
+source_directory: Sources
+output_directory: .
