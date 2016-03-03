@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
 [![License](https://img.shields.io/cocoapods/l/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
 [![Platform](https://img.shields.io/cocoapods/p/SettingsKit.svg?style=flat)](http://cocoapods.org/pods/SettingsKit)
+[![codecov.io](https://codecov.io/github/dtrenz/SettingsKit/coverage.svg?branch=develop)](https://codecov.io/github/dtrenz/SettingsKit?branch=develop)
 [![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 
 `SettingsKit` is a small library & build tool that makes it easier to work
