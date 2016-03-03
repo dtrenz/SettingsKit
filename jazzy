@@ -7,4 +7,4 @@ jazzy \
   --module-version 0.1.0 \
   --xcodebuild-arguments -scheme,SettingsKit \
   --module SettingsKit \
-  --output Docs
+  --output docs
