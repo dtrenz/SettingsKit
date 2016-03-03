@@ -16,14 +16,14 @@ public protocol SettingsKit: CustomStringConvertible {
 
 // SettingsKit enum extension (a/k/a "where the magic happens")
 public extension SettingsKit {
-  
+
   /// Convenience typealias for subscribe() onChange closure
   public typealias SettingChangeHandler = (newValue: AnyObject?) -> Void
-  
+
   /// String description of the enum value
   public var description: String {
     guard let value = Self.get(self) else { return "nil" }
-    
+
     return "\(value)"
   }
   
@@ -32,7 +32,7 @@ public extension SettingsKit {
   
   
   // MARK: - Static Convenience Methods
-  
+
   /**
   Fetch the current value for a given setting.
   
@@ -43,7 +43,7 @@ public extension SettingsKit {
   public static func get(setting: Self) -> AnyObject? {
     return setting.get()
   }
-  
+
   /**
    Update the value of a given setting.
    
@@ -54,7 +54,7 @@ public extension SettingsKit {
   public static func set<T>(setting: Self, _ value: T) {
     setting.set(value)
   }
-  
+
   /**
    Observe a given setting for changes. The `onChange` closure will be called,
    with the new setting value, whenever the setting value is changed either 
@@ -67,8 +67,7 @@ public extension SettingsKit {
   public static func subscribe(setting: Self, onChange: SettingChangeHandler) {
     setting.subscribe(onChange)
   }
-  
-  
+
   // MARK: - Instance Methods
   
   /**
@@ -114,12 +113,12 @@ public extension SettingsKit {
    */
   private func subscribe(onChange: SettingChangeHandler) {
     let center = NSNotificationCenter.defaultCenter()
-    
+
     center.addObserverForName(NSUserDefaultsDidChangeNotification, object: defaults, queue: nil) { (notif) -> Void in
       if let defaults = notif.object as? NSUserDefaults {
         onChange(newValue: defaults.objectForKey(self.identifier))
       }
     }
   }
-  
+
 }
