@@ -1,20 +1,13 @@
 PODS:
   - Nimble (3.0.0)
   - Quick (0.8.0)
-  - SettingsKit (0.1.0)
 
 DEPENDENCIES:
   - Nimble (= 3.0.0)
   - Quick (~> 0.8.0)
-  - SettingsKit (from `.`)
-
-EXTERNAL SOURCES:
-  SettingsKit:
-    :path: "."
 
 SPEC CHECKSUMS:
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
-  SettingsKit: a682389b9bf71bfa897bd93bd667c4b2a731e321
 
 COCOAPODS: 0.39.0
