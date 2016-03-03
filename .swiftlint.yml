@@ -1,7 +1,3 @@
-# disabled_rules: # rule identifiers to exclude from running
- # - valid_docs
-  # Find all the available rules by running:
-  # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.
   - Sources
 # parameterized rules can be customized from this configuration file
@@ -10,4 +6,3 @@ line_length: 120
 type_body_length:
   - 300 # warning
   - 400 # error
-# reporter: "csv" # reporter type (xcode, json, csv, checkstyle)
