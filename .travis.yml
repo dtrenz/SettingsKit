@@ -16,6 +16,8 @@ before_install:
   - rvm use $RVM_RUBY_VERSION
   - gem install cocoapods
   - pod install
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 script:
   - set -o pipefail && xcodebuild clean test -workspace SettingsKit.xcworkspace -scheme SettingsKit -destination 'platform=iOS Simulator,name=iPhone 6s' ONLY_ACTIVE_ARCH=YES | xcpretty
   - pod lib lint

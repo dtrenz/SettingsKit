@@ -1,0 +1,14 @@
+PODS:
+  - SettingsKit (0.1.0)
+
+DEPENDENCIES:
+  - SettingsKit (from `../`)
+
+EXTERNAL SOURCES:
+  SettingsKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SettingsKit: a682389b9bf71bfa897bd93bd667c4b2a731e321
+
+COCOAPODS: 0.39.0

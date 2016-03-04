@@ -36,3 +36,6 @@ xcuserdata
 Pods/
 
 *.xcuserstate
+
+# Jazzy docs
+docs/

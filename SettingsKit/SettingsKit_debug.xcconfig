@@ -1,0 +1,2 @@
+#include "SettingsKit/SettingsKit_base.xcconfig"
+SWIFT_OPTIMIZATION_LEVEL = -Onone

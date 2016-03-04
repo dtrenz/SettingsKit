@@ -1,7 +1,7 @@
 import Quick
 import Nimble
 
-import SettingsKit
+@testable import SettingsKit
 
 
 enum Settings: SettingsKit {
@@ -29,11 +29,27 @@ enum Settings: SettingsKit {
 
 class SettingsKitSpec: QuickSpec {
   override func spec() {
-
-    describe("set()") {
+    
+    describe("description") {
+      
+      it("returns a string representation of the setting value") {
+        Settings.set(.LuckyNumber, 23)
+        
+        expect(Settings.LuckyNumber.description) == "23"
+      }
+      
+      it("returns a string representation of a nil setting value") {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(Settings.LuckyNumber.identifier)
+        
+        expect(Settings.LuckyNumber.description) == "nil"
+      }
+      
+    }
+    
+    describe("set() — convenience method") {
       
       context("when storing any supported Settings.bundle preference item value type") {
-      
+        
         it("can store an array") {
           let identifier = Settings.SocialNetworks.identifier
           let value = [ "facebook", "twitter", "instagram" ]
@@ -132,7 +148,7 @@ class SettingsKitSpec: QuickSpec {
     }
     
     
-    describe("get()") {
+    describe("get() — convenience method") {
       
       context("when fetching any supported Settings.bundle preference item value type") {
         
@@ -219,18 +235,40 @@ class SettingsKitSpec: QuickSpec {
       
     }
     
-    describe("description") {
+    
+    describe("subscribe() — convenience method") {
       
-      it("returns a string representation of the setting value") {
-        Settings.set(.LuckyNumber, 23)
+      context("when the observed setting changes") {
         
-        expect(Settings.LuckyNumber.description) == "23"
-      }
-      
-      it("returns a string representation of a nil setting value") {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(Settings.LuckyNumber.identifier)
+        it("the onChange closure is called") {
+          var handlerWasCalled = false
+          
+          NSUserDefaults.standardUserDefaults().setBool(false, forKey: Settings.EnableAnalytics.identifier)
+          
+          Settings.subscribe(.EnableAnalytics) { (newValue) -> Void in
+            handlerWasCalled = true
+          }
+          
+          NSUserDefaults.standardUserDefaults().setBool(true, forKey: Settings.EnableAnalytics.identifier)
+          
+          expect(handlerWasCalled).toEventually(beTrue())
+        }
         
-        expect(Settings.LuckyNumber.description) == "nil"
+        it("the new value of the observed setting is passed to the onChange closure") {
+          var result = false
+          
+          NSUserDefaults.standardUserDefaults().setBool(false, forKey: Settings.EnableAnalytics.identifier)
+          
+          Settings.subscribe(.EnableAnalytics) { (newValue) -> Void in
+            if let newValue = newValue as? Bool {
+              result = newValue
+            }
+          }
+          
+          NSUserDefaults.standardUserDefaults().setBool(true, forKey: Settings.EnableAnalytics.identifier)
+          
+          expect(result).toEventually(beTrue())
+        }
       }
       
     }
