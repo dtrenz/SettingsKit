@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SettingsKit  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="SettingsKit  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">SettingsKit Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/dtrenz/SettingsKit"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">SettingsKit Reference</a>
+        <img id="carat" src="img/carat.png" />
+        SettingsKit  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/SettingsKit.html">SettingsKit</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#settingskit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='settingskit'>SettingsKit</h1>
+
+<p><a href="https://travis-ci.org/dtrenz/SettingsKit"><img src="http://img.shields.io/travis/dtrenz/SettingsKit.svg?style=flat" alt="CI Status"></a>
+<a href="http://cocoapods.org/pods/SettingsKit"><img src="https://img.shields.io/cocoapods/v/SettingsKit.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/SettingsKit"><img src="https://img.shields.io/cocoapods/l/SettingsKit.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/SettingsKit"><img src="https://img.shields.io/cocoapods/p/SettingsKit.svg?style=flat" alt="Platform"></a>
+<a href="https://codecov.io/github/dtrenz/SettingsKit?branch=develop"><img src="https://codecov.io/github/dtrenz/SettingsKit/coverage.svg?branch=develop" alt="codecov.io"></a>
+<a href="http://www.detroitlabs.com"><img src="https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat" alt="Sponsored by Detroit Labs"></a></p>
+
+<p><code>SettingsKit</code> is a small library &amp; build tool that makes it easier to work
+with app preferences in the iOS Settings app. It also makes working with
+settings a bit safer by using enums instead of <q>magic</q> strings, which are
+vulnerable to typos.</p>
+<a href='#how_does_it_work' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='how_does_it_work'>How does it work?</h2>
+
+<p><code>SettingsKit</code> comes bundled with a tool that generates an enum (<code>Settings.swift</code>)
+at build-time based on the preference items you have configured in your Settings.bundle.
+You can then use the <code>Settings</code> enum to easily access, update and observe individual
+settings.</p>
+
+<p>Here is a Settings screen w/ generated enum and sample implementation code:</p>
+
+<p><a href="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/how-it-works.png"><img src="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/how-it-works.png" alt="Settings Example"></a></p>
+<a href='#when_would_i_want_to_use_settingkit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='when_would_i_want_to_use_settingkit'>When would I want to use SettingKit?</h2>
+
+<p>Here are just a few ways you could use SettingsKit;
+ - display the current app version &amp; build number to users or testers, which can
+ be very helpful for handling bug reports.
+ - give users simple controls for app preferences (e.g. enable a color blindness theme)
+ - enable testers to see which back-end environment (i.e. <q>Staging</q>) the current
+ build is using, and also allow them to change the back-end environment at runtime,
+ without having to provide seperate builds for each environment.</p>
+
+<p>The types of settings you use are completely up to you. <code>SettingsKit</code> simply
+makes it easier to add settings to your app.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<a href='#fetch_a_setting' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='fetch_a_setting'>Fetch a setting</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="kt">Settings</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="o">.</span><span class="kt">FirstName</span><span class="p">)</span>
+</code></pre>
+<a href='#modify_a_setting' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='modify_a_setting'>Modify a setting</h3>
+<pre class="highlight swift"><code><span class="kt">Settings</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="o">.</span><span class="kt">ApiEnvironment</span><span class="p">,</span> <span class="s">"Staging"</span><span class="p">)</span>
+<span class="kt">Settings</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="o">.</span><span class="kt">Contrast</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+<span class="kt">Settings</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="o">.</span><span class="kt">EnableAnalytics</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre>
+<a href='#observe_a_setting' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='observe_a_setting'>Observe a setting</h3>
+<pre class="highlight swift"><code><span class="c1">// observe and respond to any changes made to a given setting</span>
+<span class="kt">Settings</span><span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="o">.</span><span class="kt">FavoriteColor</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">newValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+  <span class="nf">print</span><span class="p">(</span><span class="s">"Favorite color was changed to </span><span class="se">\(</span><span class="n">newValue</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p><code>SettingsKit</code> is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"SettingsKit"</span>
+</code></pre>
+
+<p>You will also need the <code>xcodeproj</code> ruby gem in order to use the <code>SettingsKit</code>
+build tool to auto-generate the Settings.swift file.</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>gem install xcodeproj
+</code></pre>
+<a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>Setup</h2>
+<a href='#create_a_settings_bundle' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='create_a_settings_bundle'>Create a Settings bundle</h3>
+
+<p>In order to add custom items to Settings your app must have a Settings bundle
+with a <code>Root.plist</code>. To fetch, update, and/or observe settings you will need to
+add the settings you would like to use to the <q>Preference Items</q> array in your
+<code>Settings.bundle/Root.plist</code>.</p>
+
+<blockquote>
+<p>Example:</p>
+
+<p><img src="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-root-plist.png" alt="Settings.bundle/Root.plist"></p>
+</blockquote>
+
+<p>Once you have added one or more preference items, build your project to have
+<code>SettingsKit</code> generate a <code>Settings.swift</code> file from your <code>Settings.bundle/Root.plist</code>.</p>
+
+<blockquote>
+<p><strong>Important</strong> — Anytime you change the preference items in your <code>Root.plist</code>
+you will need build your project to generate an updated <code>Settings.swift</code> file.</p>
+</blockquote>
+<a href='#add_a_run_script_build_phase' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='add_a_run_script_build_phase'>Add a run script build phase</h3>
+
+<p>To allow <code>SettingsKit</code> to auto-generate a Settings enum file you will need to
+add a run script build phase to your app&rsquo;s target: Target &gt; Build Phases &gt; <q>+</q> &gt; <q>New Run Script Phase</q></p>
+
+<p><strong>IMPORTANT</strong> Make sure you put the new run script phase above the <q>Compile Sources</q>
+phase.</p>
+
+<p><strong>Step 1:</strong> Copy/paste the following into the script box:</p>
+<pre class="highlight shell"><code><span class="nv">PATH</span><span class="o">=</span><span class="k">$(</span>bash -l -c <span class="s1">'echo $PATH'</span><span class="k">)</span>
+<span class="nv">$PODS_ROOT</span>/SettingsKit/build -p <span class="nv">$PROJECT_FILE_PATH</span> -s <span class="nv">$SCRIPT_INPUT_FILE_0</span> -o <span class="nv">$SCRIPT_OUTPUT_FILE_0</span>
+</code></pre>
+
+<p><strong>Step 2:</strong> Add the path to your <code>Settings.bundle/Root.plist</code> to <q>Input Files</q>.</p>
+
+<blockquote>
+<p>Example:</p>
+
+<p><img src="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-input-file.png" alt="Run script: Input files example"></p>
+</blockquote>
+
+<p><strong>Step 3:</strong> Add the path to where you would like the generated <code>Settings.swift</code>
+file to be live (i.e. where you put your app&rsquo;s source files).</p>
+
+<blockquote>
+<p>Example:</p>
+
+<p><img src="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-output-file.png" alt="Run script: Output files example"></p>
+</blockquote>
+
+<p>When you are done with all of the above steps, your <code>SettingsKit</code> run script
+phase should look something like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-run-script.png" alt="Run script phase example"></p>
+
+<p>Finally, build (⌘B) your project. If the project builds successfully, you should
+now see a new <code>Settings.swift</code> file in your project. Feel free to move it to any
+group in your project.</p>
+
+<p>From now on, everytime you build, <code>SettingsKit</code> will update the <code>Settings.swift</code>
+file to match the Preference Items you have configured in your
+<code>Settings.bundle/Root.plist</code>. You should never need to manually edit <code>Settings.swift</code>.</p>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p>Dan Trenz (<a href="http://www.twitter.com/dtrenz">@dtrenz</a>) c/o <a href="http://www.detroitlabs.com">Detroit Labs</a></p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>SettingsKit is available under the Apache License, Version 2.0. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/dtrenz/SettingsKit" target="_blank" rel="external">Dan Trenz</a>. All rights reserved. (Last updated: 2016-03-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
