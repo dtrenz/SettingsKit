@@ -1,3 +1,4 @@
+
 # SettingsKit
 
 [![CI Status](http://img.shields.io/travis/dtrenz/SettingsKit.svg?style=flat)](https://travis-ci.org/dtrenz/SettingsKit)
@@ -21,7 +22,7 @@ settings.
 
 Here is a Settings screen w/ generated enum and sample implementation code:
 
-[![Settings Example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/how-it-works.png)](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/how-it-works.png)
+[![Settings Example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/how-it-works.png)](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/how-it-works.png)
 
 
 ## When would I want to use SettingKit?
@@ -91,7 +92,7 @@ add the settings you would like to use to the "Preference Items" array in your
 
 > Example:
 >
-> ![Settings.bundle/Root.plist](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/setup-root-plist.png)
+> ![Settings.bundle/Root.plist](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-root-plist.png)
 
 Once you have added one or more preference items, build your project to have
 `SettingsKit` generate a `Settings.swift` file from your `Settings.bundle/Root.plist`.
@@ -117,19 +118,19 @@ $PODS_ROOT/SettingsKit/build -p $PROJECT_FILE_PATH -s $SCRIPT_INPUT_FILE_0 -o $S
 
 > Example:
 >
-> ![Run script: Input files example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/setup-input-file.png)
+> ![Run script: Input files example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-input-file.png)
 
 **Step 3:** Add the path to where you would like the generated `Settings.swift`
 file to be live (i.e. where you put your app's source files).
 
 > Example:
 >
-> ![Run script: Output files example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/setup-output-file.png)
+> ![Run script: Output files example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-output-file.png)
 
 When you are done with all of the above steps, your `SettingsKit` run script
 phase should look something like this:
 
-![Run script phase example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Docs/Screenshots/setup-run-script.png)
+![Run script phase example](https://raw.githubusercontent.com/dtrenz/SettingsKit/develop/Screenshots/setup-run-script.png)
 
 Finally, build (⌘B) your project. If the project builds successfully, you should
 now see a new `Settings.swift` file in your project. Feel free to move it to any
