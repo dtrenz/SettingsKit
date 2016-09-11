@@ -48,8 +48,10 @@ enum Settings: SettingsKit {
 swift
     end
 
-    def snake_to_studly(string)
-      string.split("_").map { |i| i.capitalize }.join
+    def snake_to_camel(string)
+      string.split("_").map.with_index { |word, index| 
+        index == 0 ? word.capitalize : word.downcase
+      }.join
     end
 
   end

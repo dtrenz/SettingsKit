@@ -29,7 +29,7 @@ Here is a Settings screen w/ generated enum and sample implementation code:
 
 Here are just a few ways you could use SettingsKit;
  - display the current app version & build number to users or testers, which can
- be very helpful for handling bug reports.
+ be helpful for handling bug reports.
  - give users simple controls for app preferences (e.g. enable a color blindness theme)
  - enable testers to see which back-end environment (i.e. "Staging") the current
  build is using, and also allow them to change the back-end environment at runtime,
@@ -44,22 +44,22 @@ makes it easier to add settings to your app.
 ### Fetch a setting
 
 ```swift
-let name = Settings.get(.FirstName)
+let name = Settings.get(.firstName)
 ```
 
 ### Modify a setting
 
 ```swift
-Settings.set(.ApiEnvironment, "Staging")
-Settings.set(.Contrast, 80)
-Settings.set(.EnableAnalytics, true)
+Settings.set(.apiEnvironment, "Staging")
+Settings.set(.contrast, 80)
+Settings.set(.enableAnalytics, true)
 ```
 
 ### Observe a setting
 
 ```swift
 // observe and respond to any changes made to a given setting
-Settings.subscribe(.FavoriteColor) { (newValue) -> Void in
+Settings.subscribe(.favoriteColor) { (newValue) -> Void in
   print("Favorite color was changed to \(newValue)")
 }
 ```
