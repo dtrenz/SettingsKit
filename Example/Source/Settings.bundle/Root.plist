@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>Version</string>
 			<key>Key</key>
-			<string>app_version</string>
+			<string>appVersion</string>
 			<key>DefaultValue</key>
 			<string></string>
 		</dict>
@@ -28,7 +28,7 @@
 			<key>Title</key>
 			<string>API Environment</string>
 			<key>Key</key>
-			<string>api_environment</string>
+			<string>apiEnvironment</string>
 			<key>DefaultValue</key>
 			<string></string>
 		</dict>
@@ -38,7 +38,7 @@
 			<key>Title</key>
 			<string>Enable Analytics</string>
 			<key>Key</key>
-			<string>enable_analytics</string>
+			<string>enableAnalytics</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
@@ -48,7 +48,7 @@
 			<key>Title</key>
 			<string>First Name</string>
 			<key>Key</key>
-			<string>first_name</string>
+			<string>firstName</string>
 			<key>DefaultValue</key>
 			<string></string>
 		</dict>
@@ -58,7 +58,7 @@
 			<key>Title</key>
 			<string>Favorite Color</string>
 			<key>Key</key>
-			<string>favorite_color</string>
+			<string>favoriteColor</string>
 			<key>DefaultValue</key>
 			<string>#FF0000</string>
 			<key>Values</key>

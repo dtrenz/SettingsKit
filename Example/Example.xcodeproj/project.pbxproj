@@ -64,9 +64,9 @@
 			children = (
 				C5D7BDAE1C80B9640061D9DD /* Settings.bundle */,
 				C5D7BDA61C80B9640061D9DD /* AppDelegate.swift */,
+				C5FD15251D85CEF800C8DA93 /* Settings.swift */,
 				C5C8ED451C80C3C3001BC3F7 /* Interface */,
 				C5D7BDB71C80B9990061D9DD /* Supporting Files */,
-				C5FD15251D85CEF800C8DA93 /* Settings.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -95,7 +95,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C56921D81C765DB200CC8F56 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				C5D7BD821C7F92700061D9DD /* SettingsKit */,
 				C56921C21C765DB200CC8F56 /* Sources */,
 				C56921C31C765DB200CC8F56 /* Frameworks */,
 				C56921C41C765DB200CC8F56 /* Resources */,
@@ -155,25 +154,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C5D7BD821C7F92700061D9DD /* SettingsKit */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Source/Settings.bundle/Root.plist",
-			);
-			name = SettingsKit;
-			outputPaths = (
-				"$(SRCROOT)/Source/Settings.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#PATH=$(bash -l -c 'echo $PATH')\n#../build -p $PROJECT_FILE_PATH -s $SCRIPT_INPUT_FILE_0 -o $SCRIPT_OUTPUT_FILE_0\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C56921C21C765DB200CC8F56 /* Sources */ = {

@@ -10,8 +10,7 @@
 *  Protocol for the SettingsKit enum
 */
 public protocol SettingsKit: CustomStringConvertible {
-  /// The identifier string for the Settings preference item
-  var identifier: String { get }
+    var rawValue: String { get }
 }
 
 // SettingsKit enum extension (a/k/a "where the magic happens")
@@ -79,7 +78,7 @@ public extension SettingsKit {
   - Returns: The current setting value
   */
   fileprivate func get() -> AnyObject? {
-    return defaults.object(forKey: identifier) as AnyObject?
+    return defaults.object(forKey: rawValue) as AnyObject?
   }
   
   /**
@@ -92,11 +91,11 @@ public extension SettingsKit {
    */
   fileprivate func set<T>(_ value: T) {
     if let boolVal = value as? Bool {
-      defaults.set(boolVal, forKey: identifier)
+      defaults.set(boolVal, forKey: rawValue)
     } else if let intVal = value as? Int {
-      defaults.set(intVal, forKey: identifier)
+      defaults.set(intVal, forKey: rawValue)
     } else {
-      defaults.set(value, forKey: identifier)
+      defaults.set(value, forKey: rawValue)
     }
   }
   
@@ -116,7 +115,7 @@ public extension SettingsKit {
 
     center.addObserver(forName: UserDefaults.didChangeNotification, object: defaults, queue: nil) { (notif) -> Void in
       if let defaults = notif.object as? UserDefaults {
-        onChange(defaults.object(forKey: self.identifier) as AnyObject?)
+        onChange(defaults.object(forKey: self.rawValue) as AnyObject?)
       }
     }
   }
