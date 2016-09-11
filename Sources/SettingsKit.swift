@@ -18,7 +18,7 @@ public protocol SettingsKit: CustomStringConvertible {
 public extension SettingsKit {
 
   /// Convenience typealias for subscribe() onChange closure
-  public typealias SettingChangeHandler = (newValue: AnyObject?) -> Void
+  public typealias SettingChangeHandler = (_ newValue: AnyObject?) -> Void
 
   /// String description of the enum value
   public var description: String {
@@ -26,50 +26,50 @@ public extension SettingsKit {
 
     return "\(value)"
   }
-  
+
   /// Local defaults reference
-  private var defaults: NSUserDefaults { return NSUserDefaults.standardUserDefaults() }
-  
-  
+  fileprivate var defaults: UserDefaults { return UserDefaults.standard }
+
+
   // MARK: - Static Convenience Methods
 
   /**
   Fetch the current value for a given setting.
-  
+
   - Parameter setting: The setting to fetch
-  
+
   - Returns: The current setting value
   */
-  public static func get(setting: Self) -> AnyObject? {
+  public static func get(_ setting: Self) -> AnyObject? {
     return setting.get()
   }
 
   /**
    Update the value of a given setting.
-   
+
    - Parameters:
      - setting: The setting to update
      - value:   The value to store for the setting
    */
-  public static func set<T>(setting: Self, _ value: T) {
+  public static func set<T>(_ setting: Self, _ value: T) {
     setting.set(value)
   }
 
   /**
    Observe a given setting for changes. The `onChange` closure will be called,
-   with the new setting value, whenever the setting value is changed either 
+   with the new setting value, whenever the setting value is changed either
    by the user, or progammatically.
-   
+
    - Parameters:
      - setting:  The setting to observe
      - onChange: The closure to call when the setting's value is updated
    */
-  public static func subscribe(setting: Self, onChange: SettingChangeHandler) {
+  public static func subscribe(_ setting: Self, onChange: @escaping SettingChangeHandler) {
     setting.subscribe(onChange)
   }
 
   // MARK: - Instance Methods
-  
+
   /**
   Fetch the current value for a given setting.
   
@@ -78,8 +78,8 @@ public extension SettingsKit {
   
   - Returns: The current setting value
   */
-  private func get() -> AnyObject? {
-    return defaults.objectForKey(identifier)
+  fileprivate func get() -> AnyObject? {
+    return defaults.object(forKey: identifier) as AnyObject?
   }
   
   /**
@@ -90,13 +90,13 @@ public extension SettingsKit {
    
    - Parameter value: The value to store for the setting
    */
-  private func set<T>(value: T) {
+  fileprivate func set<T>(_ value: T) {
     if let boolVal = value as? Bool {
-      defaults.setBool(boolVal, forKey: identifier)
+      defaults.set(boolVal, forKey: identifier)
     } else if let intVal = value as? Int {
-      defaults.setInteger(intVal, forKey: identifier)
-    } else if let objectVal = value as? AnyObject {
-      defaults.setObject(objectVal, forKey: identifier)
+      defaults.set(intVal, forKey: identifier)
+    } else {
+      defaults.set(value, forKey: identifier)
     }
   }
   
@@ -111,12 +111,12 @@ public extension SettingsKit {
    
    - Parameter onChange: The closure to call when the setting's value is updated
    */
-  private func subscribe(onChange: SettingChangeHandler) {
-    let center = NSNotificationCenter.defaultCenter()
+  fileprivate func subscribe(_ onChange: @escaping SettingChangeHandler) {
+    let center = NotificationCenter.default
 
-    center.addObserverForName(NSUserDefaultsDidChangeNotification, object: defaults, queue: nil) { (notif) -> Void in
-      if let defaults = notif.object as? NSUserDefaults {
-        onChange(newValue: defaults.objectForKey(self.identifier))
+    center.addObserver(forName: UserDefaults.didChangeNotification, object: defaults, queue: nil) { (notif) -> Void in
+      if let defaults = notif.object as? UserDefaults {
+        onChange(defaults.object(forKey: self.identifier) as AnyObject?)
       }
     }
   }

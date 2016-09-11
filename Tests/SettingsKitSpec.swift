@@ -5,23 +5,23 @@ import Nimble
 
 
 enum Settings: SettingsKit {
-  case ApiEnvironment, CityState, DateOfBirth, EnableAnalytics, EncodedString, LuckyNumber, SocialNetworks
+  case apiEnvironment, cityState, dateOfBirth, enableAnalytics, encodedString, luckyNumber, socialNetworks
   
   var identifier: String {
     switch self {
-      case .ApiEnvironment:
+      case .apiEnvironment:
         return "api_environment"
-      case .CityState:
+      case .cityState:
         return "city_state"
-      case .DateOfBirth:
+      case .dateOfBirth:
         return "date_of_birth"
-      case .EnableAnalytics:
+      case .enableAnalytics:
         return "enable_analytics"
-      case .EncodedString:
+      case .encodedString:
         return "encoded_string"
-      case .LuckyNumber:
+      case .luckyNumber:
         return "lucky_number"
-      case .SocialNetworks:
+      case .socialNetworks:
         return "social_networks"
     }
   }

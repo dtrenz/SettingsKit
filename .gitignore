@@ -2,7 +2,7 @@
 build/
 DerivedData
 
-# Slather code coverage artifacts
+## Slather code coverage artifacts
 cobertura.xml
 
 ## Various settings
@@ -32,10 +32,14 @@ xcuserdata
 # Packages/
 .build/
 
-# CocoaPods
+## CocoaPods
 Pods/
 
 *.xcuserstate
 
-# Jazzy docs
+## Jazzy docs
 docs/
+
+## Bundler
+.bundle
+vendor
