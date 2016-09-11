@@ -10,7 +10,7 @@
 		C5D7BDA21C80B75B0061D9DD /* SettingsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BD9F1C80B75B0061D9DD /* SettingsKit.swift */; };
 		C5D7BDA41C80B75B0061D9DD /* SettingsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C5D7BDA11C80B75B0061D9DD /* SettingsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5D7BDC11C80BA040061D9DD /* SettingsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D7BD931C80B5FD0061D9DD /* SettingsKit.framework */; };
-		C5D7BDCB1C80BC220061D9DD /* SettingsKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BDC71C80BA510061D9DD /* SettingsKitSpec.swift */; };
+		C5FD15241D85A8CA00C8DA93 /* SettingsKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FD15231D85A8CA00C8DA93 /* SettingsKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +29,8 @@
 		C5D7BDA01C80B75B0061D9DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		C5D7BDA11C80B75B0061D9DD /* SettingsKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsKit.h; path = Sources/SettingsKit.h; sourceTree = SOURCE_ROOT; };
 		C5D7BDBC1C80BA040061D9DD /* SettingsKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettingsKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5D7BDC71C80BA510061D9DD /* SettingsKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsKitSpec.swift; path = Tests/SettingsKitSpec.swift; sourceTree = SOURCE_ROOT; };
 		C5D7BDC91C80BA730061D9DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		C5FD15231D85A8CA00C8DA93 /* SettingsKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D7BDC91C80BA730061D9DD /* Info.plist */,
-				C5D7BDC71C80BA510061D9DD /* SettingsKitSpec.swift */,
+				C5FD15231D85A8CA00C8DA93 /* SettingsKitTests.swift */,
 			);
 			name = Tests;
 			path = SettingsKitTests;
@@ -165,7 +165,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Dan Trenz";
 				TargetAttributes = {
 					C5D7BD921C80B5FD0061D9DD = {
@@ -243,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D7BDCB1C80BC220061D9DD /* SettingsKitSpec.swift in Sources */,
+				C5FD15241D85A8CA00C8DA93 /* SettingsKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +271,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -319,8 +321,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +344,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -351,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -370,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
