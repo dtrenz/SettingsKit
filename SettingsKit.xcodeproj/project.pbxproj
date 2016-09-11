@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11632309D98671B6F6CB12C4 /* Pods_SettingsKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */; };
 		C5D7BDA21C80B75B0061D9DD /* SettingsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BD9F1C80B75B0061D9DD /* SettingsKit.swift */; };
 		C5D7BDA41C80B75B0061D9DD /* SettingsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C5D7BDA11C80B75B0061D9DD /* SettingsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5D7BDC11C80BA040061D9DD /* SettingsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D7BD931C80B5FD0061D9DD /* SettingsKit.framework */; };
@@ -25,9 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D7BD931C80B5FD0061D9DD /* SettingsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SettingsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D7BD9F1C80B75B0061D9DD /* SettingsKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsKit.swift; path = Sources/SettingsKit.swift; sourceTree = SOURCE_ROOT; };
 		C5D7BDA01C80B75B0061D9DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -50,29 +46,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D7BDC11C80BA040061D9DD /* SettingsKit.framework in Frameworks */,
-				11632309D98671B6F6CB12C4 /* Pods_SettingsKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5BCBCA55AFC06C317DF97761 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C5D7BD891C80B5FD0061D9DD = {
 			isa = PBXGroup;
 			children = (
 				C5D7BD951C80B5FD0061D9DD /* Sources */,
 				C5D7BDBD1C80BA040061D9DD /* Tests */,
 				C5D7BD941C80B5FD0061D9DD /* Products */,
-				CF3538BCE9D95A7D40B0B97E /* Pods */,
-				5BCBCA55AFC06C317DF97761 /* Frameworks */,
+				E61057E3D81611AF7AC06614 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,13 +100,11 @@
 			path = SettingsKitTests;
 			sourceTree = "<group>";
 		};
-		CF3538BCE9D95A7D40B0B97E /* Pods */ = {
+		E61057E3D81611AF7AC06614 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */,
-				29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +147,6 @@
 				C5D7BDB81C80BA040061D9DD /* Sources */,
 				C5D7BDB91C80BA040061D9DD /* Frameworks */,
 				C5D7BDBA1C80BA040061D9DD /* Resources */,
-				73474DF3A596BE1328F9F3D3 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,9 +170,11 @@
 				TargetAttributes = {
 					C5D7BD921C80B5FD0061D9DD = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					C5D7BDBB1C80BA040061D9DD = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -229,21 +214,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73474DF3A596BE1328F9F3D3 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C5AA99081C888BB1009577E7 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -409,28 +380,29 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C5D7BDC41C80BA040061D9DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C5D7BDC51C80BA040061D9DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
