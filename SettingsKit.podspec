@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SettingsKit"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = <<-SUMMARY
                        SettingsKit provides an elegant wrapper for iOS app settings.
                        SUMMARY
