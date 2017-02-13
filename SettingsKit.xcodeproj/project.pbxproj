@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11632309D98671B6F6CB12C4 /* Pods_SettingsKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */; };
+		5343093FAF91D7FCFEDCFFEE /* Pods_SettingsKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C362923D034B698D2F1861EC /* Pods_SettingsKitTests.framework */; };
 		C5D7BDA21C80B75B0061D9DD /* SettingsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7BD9F1C80B75B0061D9DD /* SettingsKit.swift */; };
 		C5D7BDA41C80B75B0061D9DD /* SettingsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C5D7BDA11C80B75B0061D9DD /* SettingsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5D7BDC11C80BA040061D9DD /* SettingsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D7BD931C80B5FD0061D9DD /* SettingsKit.framework */; };
@@ -25,9 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A364EA9188BEE4D578493D9 /* Pods-SettingsKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		93705A23A54035F8217520AE /* Pods-SettingsKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C362923D034B698D2F1861EC /* Pods_SettingsKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D7BD931C80B5FD0061D9DD /* SettingsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SettingsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D7BD9F1C80B75B0061D9DD /* SettingsKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsKit.swift; path = Sources/SettingsKit.swift; sourceTree = SOURCE_ROOT; };
 		C5D7BDA01C80B75B0061D9DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -50,17 +50,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D7BDC11C80BA040061D9DD /* SettingsKit.framework in Frameworks */,
-				11632309D98671B6F6CB12C4 /* Pods_SettingsKitTests.framework in Frameworks */,
+				5343093FAF91D7FCFEDCFFEE /* Pods_SettingsKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5BCBCA55AFC06C317DF97761 /* Frameworks */ = {
+		0BABDEE5C2F1A1E4C7BDE184 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A2BAC4EBCA0CC0DB3C4DB824 /* Pods_SettingsKitTests.framework */,
+				93705A23A54035F8217520AE /* Pods-SettingsKitTests.debug.xcconfig */,
+				3A364EA9188BEE4D578493D9 /* Pods-SettingsKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A4F97E58BEF937AD6C1ECA54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C362923D034B698D2F1861EC /* Pods_SettingsKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,8 +80,8 @@
 				C5D7BD951C80B5FD0061D9DD /* Sources */,
 				C5D7BDBD1C80BA040061D9DD /* Tests */,
 				C5D7BD941C80B5FD0061D9DD /* Products */,
-				CF3538BCE9D95A7D40B0B97E /* Pods */,
-				5BCBCA55AFC06C317DF97761 /* Frameworks */,
+				0BABDEE5C2F1A1E4C7BDE184 /* Pods */,
+				A4F97E58BEF937AD6C1ECA54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,15 +123,6 @@
 			path = SettingsKitTests;
 			sourceTree = "<group>";
 		};
-		CF3538BCE9D95A7D40B0B97E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */,
-				29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -160,10 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5D7BDC61C80BA040061D9DD /* Build configuration list for PBXNativeTarget "SettingsKitTests" */;
 			buildPhases = (
+				E4355058E09835DD82F13546 /* [CP] Check Pods Manifest.lock */,
 				C5D7BDB81C80BA040061D9DD /* Sources */,
 				C5D7BDB91C80BA040061D9DD /* Frameworks */,
 				C5D7BDBA1C80BA040061D9DD /* Resources */,
-				73474DF3A596BE1328F9F3D3 /* Embed Pods Frameworks */,
+				20BBABD4A3BEA191C9247425 /* [CP] Embed Pods Frameworks */,
+				41F9D168E12678CE9FAE5226 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,16 +184,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Dan Trenz";
 				TargetAttributes = {
 					C5D7BD921C80B5FD0061D9DD = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					C5D7BDBB1C80BA040061D9DD = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -231,19 +233,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73474DF3A596BE1328F9F3D3 /* Embed Pods Frameworks */ = {
+		20BBABD4A3BEA191C9247425 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41F9D168E12678CE9FAE5226 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettingsKitTests/Pods-SettingsKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5AA99081C888BB1009577E7 /* Swiftlint */ = {
@@ -259,6 +276,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		E4355058E09835DD82F13546 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -400,7 +432,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -419,33 +451,33 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C5D7BDC41C80BA040061D9DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4412B3D0A0055F6A6A496486 /* Pods-SettingsKitTests.debug.xcconfig */;
+			baseConfigurationReference = 93705A23A54035F8217520AE /* Pods-SettingsKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C5D7BDC51C80BA040061D9DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29E698A8BD2666F3874BE529 /* Pods-SettingsKitTests.release.xcconfig */;
+			baseConfigurationReference = 3A364EA9188BEE4D578493D9 /* Pods-SettingsKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtrenz.SettingsKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
