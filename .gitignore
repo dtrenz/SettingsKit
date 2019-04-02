@@ -40,3 +40,7 @@ Pods/
 
 # Jazzy docs
 docs/
+
+Builds/
+Index/
+.DS_Store
