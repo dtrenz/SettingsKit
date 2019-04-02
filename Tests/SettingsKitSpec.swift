@@ -1,5 +1,5 @@
-import Quick
 import Nimble
+import Quick
 
 @testable import SettingsKit
 
@@ -33,13 +33,13 @@ class SettingsKitSpec: QuickSpec {
     describe("description") {
       
       it("returns a string representation of the setting value") {
-        Settings.set(.LuckyNumber, 23)
+        Settings.set(setting: .LuckyNumber, 23)
         
         expect(Settings.LuckyNumber.description) == "23"
       }
       
       it("returns a string representation of a nil setting value") {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(Settings.LuckyNumber.identifier)
+        UserDefaults.standard.removeObject(forKey: Settings.LuckyNumber.identifier)
         
         expect(Settings.LuckyNumber.description) == "nil"
       }
@@ -54,11 +54,11 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.SocialNetworks.identifier
           let value = [ "facebook", "twitter", "instagram" ]
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.SocialNetworks, value)
+            Settings.set(setting: .SocialNetworks, value)
           
-          let result = NSUserDefaults.standardUserDefaults().arrayForKey(identifier) as! [String]
+            let result = UserDefaults.standard.array(forKey: identifier) as! [String]
           
           expect(result) == value
         }
@@ -67,39 +67,39 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.EnableAnalytics.identifier
           let value = true
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.EnableAnalytics, value)
+            Settings.set(setting: .EnableAnalytics, value)
           
-          let result = NSUserDefaults.standardUserDefaults().boolForKey(identifier)
+            let result = UserDefaults.standard.bool(forKey: identifier)
           
           expect(result) == value
         }
         
         it("can store data") {
           let identifier = Settings.EncodedString.identifier
-          let value = NSData(base64EncodedString: "SGVsbG8gV29ybGQ=", options: []) as NSData!
+            let value = NSData(base64Encoded: "SGVsbG8gV29ybGQ=", options: []) as! NSData
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.EncodedString, value)
+            Settings.set(setting: .EncodedString, value)
           
-          let result = NSUserDefaults.standardUserDefaults().objectForKey(identifier) as! NSData
+            let result = UserDefaults.standard.object(forKey: identifier) as! NSData
           
           expect(result) == value
         }
         
         it("can store a date") {
           let identifier = Settings.DateOfBirth.identifier
-          let formatter = NSDateFormatter()
+            let formatter = DateFormatter()
           formatter.dateFormat = "yyyy-MM-dd";
-          let value = formatter.dateFromString("1969-02-26") as NSDate!
+            let value = formatter.date(from: "1969-02-26")! as NSDate
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.DateOfBirth, value)
+            Settings.set(setting: .DateOfBirth, value)
           
-          let result = NSUserDefaults.standardUserDefaults().objectForKey(identifier) as! NSDate
+            let result = UserDefaults.standard.object(forKey: identifier) as! NSDate
           
           expect(result) == value
         }
@@ -108,11 +108,11 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.CityState.identifier
           let value = [ "Detroit": "Michigan", "Austin": "Texas", "Chicago": "Illinois" ]
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.CityState, value)
+            Settings.set(setting: .CityState, value)
           
-          let result = NSUserDefaults.standardUserDefaults().dictionaryForKey(identifier) as! [String: String]
+            let result = UserDefaults.standard.dictionary(forKey: identifier) as! [String: String]
           
           expect(result) == value
         }
@@ -121,11 +121,11 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.LuckyNumber.identifier
           let value = 23
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.LuckyNumber, value)
+            Settings.set(setting: .LuckyNumber, value)
           
-          let result = NSUserDefaults.standardUserDefaults().integerForKey(identifier)
+            let result = UserDefaults.standard.integer(forKey: identifier)
           
           expect(result) == value
         }
@@ -134,11 +134,11 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.ApiEnvironment.identifier
           let value = "Staging"
           
-          NSUserDefaults.standardUserDefaults().removeObjectForKey(identifier)
+            UserDefaults.standard.removeObject(forKey: identifier)
           
-          Settings.set(.ApiEnvironment, value)
+            Settings.set(setting: .ApiEnvironment, value)
           
-          let result = NSUserDefaults.standardUserDefaults().stringForKey(identifier)
+            let result = UserDefaults.standard.string(forKey: identifier)
           
           expect(result) == value
         }
@@ -156,9 +156,9 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.SocialNetworks.identifier
           let value = [ "facebook", "twitter", "instagram" ]
           
-          NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.SocialNetworks) as! [String]
+            let result = Settings.get(setting: .SocialNetworks) as! [String]
           
           expect(result) == value
         }
@@ -167,33 +167,33 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.EnableAnalytics.identifier
           let value = true
           
-          NSUserDefaults.standardUserDefaults().setBool(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.EnableAnalytics) as! Bool
+            let result = Settings.get(setting: .EnableAnalytics) as! Bool
           
           expect(result) == value
         }
         
         it("can fetch data") {
           let identifier = Settings.EncodedString.identifier
-          let value = NSData(base64EncodedString: "SGVsbG8gV29ybGQ=", options: []) as NSData!
+            let value = NSData(base64Encoded: "SGVsbG8gV29ybGQ=", options: []) as! NSData
           
-          NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.EncodedString) as! NSData
+            let result = Settings.get(setting: .EncodedString) as! NSData
           
           expect(result) == value
         }
         
         it("can fetch a date") {
           let identifier = Settings.DateOfBirth.identifier
-          let formatter = NSDateFormatter()
+            let formatter = DateFormatter()
           formatter.dateFormat = "yyyy-MM-dd";
-          let value = formatter.dateFromString("1969-02-26") as NSDate!
+            let value = formatter.date(from: "1969-02-26") as! NSDate
           
-          NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.DateOfBirth) as! NSDate
+            let result = Settings.get(setting: .DateOfBirth) as! NSDate
           
           expect(result) == value
         }
@@ -202,9 +202,9 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.CityState.identifier
           let value = [ "Detroit": "Michigan", "Austin": "Texas", "Chicago": "Illinois" ]
           
-          NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.CityState) as! [ String: String ]
+            let result = Settings.get(setting: .CityState) as! [ String: String ]
           
           expect(result) == value
         }
@@ -213,9 +213,9 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.LuckyNumber.identifier
           let value = 23
           
-          NSUserDefaults.standardUserDefaults().setInteger(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.LuckyNumber) as! Int
+            let result = Settings.get(setting: .LuckyNumber) as! Int
           
           expect(result) == value
         }
@@ -224,9 +224,9 @@ class SettingsKitSpec: QuickSpec {
           let identifier = Settings.ApiEnvironment.identifier
           let value = "Staging"
           
-          NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
+            UserDefaults.standard.set(value, forKey: identifier)
           
-          let result = Settings.get(.ApiEnvironment) as! String
+            let result = Settings.get(setting: .ApiEnvironment) as! String
           
           expect(result) == value
         }
@@ -243,13 +243,13 @@ class SettingsKitSpec: QuickSpec {
         it("the onChange closure is called") {
           var handlerWasCalled = false
           
-          NSUserDefaults.standardUserDefaults().setBool(false, forKey: Settings.EnableAnalytics.identifier)
+            UserDefaults.standard.set(false, forKey: Settings.EnableAnalytics.identifier)
           
-          Settings.subscribe(.EnableAnalytics) { (newValue) -> Void in
+            Settings.subscribe(setting: .EnableAnalytics) { (newValue) -> Void in
             handlerWasCalled = true
           }
           
-          NSUserDefaults.standardUserDefaults().setBool(true, forKey: Settings.EnableAnalytics.identifier)
+            UserDefaults.standard.set(true, forKey: Settings.EnableAnalytics.identifier)
           
           expect(handlerWasCalled).toEventually(beTrue())
         }
@@ -257,15 +257,15 @@ class SettingsKitSpec: QuickSpec {
         it("the new value of the observed setting is passed to the onChange closure") {
           var result = false
           
-          NSUserDefaults.standardUserDefaults().setBool(false, forKey: Settings.EnableAnalytics.identifier)
+            UserDefaults.standard.set(false, forKey: Settings.EnableAnalytics.identifier)
           
-          Settings.subscribe(.EnableAnalytics) { (newValue) -> Void in
+            Settings.subscribe(setting: .EnableAnalytics) { (newValue) -> Void in
             if let newValue = newValue as? Bool {
               result = newValue
             }
           }
           
-          NSUserDefaults.standardUserDefaults().setBool(true, forKey: Settings.EnableAnalytics.identifier)
+            UserDefaults.standard.set(true, forKey: Settings.EnableAnalytics.identifier)
           
           expect(result).toEventually(beTrue())
         }
