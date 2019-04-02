@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SettingsKit"
-  s.version          = "0.3.0"
+  s.version          = "0.4.0"
   s.summary          = <<-SUMMARY
                        SettingsKit provides an elegant wrapper for iOS app settings.
                        SUMMARY
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source_files     = [ "Sources/**/*", "cli/**/*", "build" ]
   s.preserve_paths   = [ "cli/**/*", "build" ]
 
-  s.ios.deployment_target = '8.3'
+  s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.11'
-  s.tvos.deployment_target = '9.0'
+  s.tvos.deployment_target = '10.0'
 end
